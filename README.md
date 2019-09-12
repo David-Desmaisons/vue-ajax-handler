@@ -6,7 +6,7 @@
 
 ## Usage
 ```HTML
-<VueLazyLoading :text="hello"></VueLazyLoading>
+<VueLazyLoading></VueLazyLoading>
 ```
 ```javascript
 import { VueLazyLoading } from 'vue-lazy-loading'

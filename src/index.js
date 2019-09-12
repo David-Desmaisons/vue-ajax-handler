@@ -1,5 +1,3 @@
-import VueLazyLoading from './components/VueLazyLoading.vue';
+import VueLazyLoading from "./components/VueLazyLoading.vue";
 
-export {
-    VueLazyLoading
-}
+export { VueLazyLoading };
