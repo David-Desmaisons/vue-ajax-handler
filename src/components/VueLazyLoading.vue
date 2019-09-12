@@ -7,7 +7,7 @@
       <div class="loading">{{ error }}</div>
     </slot>
     <slot v-else v-bind="{ data }">
-      <pre>{{ data }}</pre>
+      <pre>{{ JSON.stringify(data, null, 4) }}</pre>
     </slot>
   </div>
 </template>
@@ -23,18 +23,33 @@ export default {
     }
   },
   data: () => ({
-    loading: true,
+    loading: false,
     data: null,
     error: null
   }),
   async created() {
-    try {
-      this.data = await this.get(this.url);
-      this.loading = false;
-    } catch (error) {
-      this.error = error;
-      this.loading = false;
+    await this.load();
+  },
+  methods: {
+    async load() {
+      if (this.loading) {
+        return;
+      }
+      this.loading = true;
+      this.error = null;
+      try {
+        this.data = await this.get(this.url);
+        this.loading = false;
+      } catch (error) {
+        this.error = error;
+        this.loading = false;
+      }
     }
   }
 };
 </script>
+<style scoped>
+pre {
+  background: lightgrey;
+}
+</style>

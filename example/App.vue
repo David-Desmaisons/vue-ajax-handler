@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <component-fixture>
+    <component-fixture :defaults="{url: 'https://api.github.com/orgs/vuejs/repos'}">
 
       <VueLazyLoading />
 
@@ -18,9 +18,14 @@
 import { ComponentFixture, Editor } from "component-fixture";
 import "component-fixture/dist/ComponentFixture.css";
 import VueLazyLoading from "@/components/VueLazyLoading.vue";
+import { get } from "axios";
+
 
 export default {
   name: "app",
+  provide:{
+    get
+  },
   components: {
     ComponentFixture,
     Editor,
@@ -34,7 +39,6 @@ export default {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
