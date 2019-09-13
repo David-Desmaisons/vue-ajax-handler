@@ -1,12 +1,22 @@
 <template>
   <div>
-    <slot v-if="loading" name="loading">
+    <slot
+      v-if="loading"
+      name="loading"
+    >
       <div class="loading">Loading ...</div>
     </slot>
-    <slot v-else-if="error" name="error" v-bind="{ error }">
+    <slot
+      v-else-if="error"
+      name="error"
+      v-bind="{ error }"
+    >
       <div class="loading">{{ error }}</div>
     </slot>
-    <slot v-else v-bind="{ data }">
+    <slot
+      v-else
+      v-bind="{ data }"
+    >
       <pre>{{ JSON.stringify(data, null, 4) }}</pre>
     </slot>
   </div>
@@ -36,10 +46,10 @@ export default {
         return;
       }
       this.loading = true;
-      this.error = null;
       try {
         this.data = await this.get(this.url);
         this.loading = false;
+        this.error = null;
       } catch (error) {
         this.error = error;
         this.loading = false;
