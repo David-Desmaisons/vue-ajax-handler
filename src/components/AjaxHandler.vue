@@ -14,7 +14,7 @@
 
 <script>
 export default {
-  name: "lazy-loading",
+  name: "ajax-handler",
   inject: ["get"],
   props: {
     url: {

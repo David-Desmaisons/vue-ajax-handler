@@ -1,3 +1,3 @@
-import VueLazyLoading from "./components/VueLazyLoading.vue";
+import ajaxHandler from "./components/AjaxHandler.vue";
 
-export { VueLazyLoading };
+export { ajaxHandler };

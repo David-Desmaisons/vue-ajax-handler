@@ -2,7 +2,7 @@
   <div id="app">
     <component-fixture :defaults="{url: 'https://api.github.com/orgs/vuejs/repos'}">
 
-      <VueLazyLoading />
+      <AjaxHandler />
 
       <Editor
         slot="control"
@@ -17,7 +17,7 @@
 <script>
 import { ComponentFixture, Editor } from "component-fixture";
 import "component-fixture/dist/ComponentFixture.css";
-import VueLazyLoading from "@/components/VueLazyLoading.vue";
+import AjaxHandler from "@/components/AjaxHandler.vue";
 import { get } from "axios";
 
 
@@ -29,7 +29,7 @@ export default {
   components: {
     ComponentFixture,
     Editor,
-    VueLazyLoading
+    AjaxHandler
   }
 };
 </script>
