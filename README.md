@@ -6,6 +6,8 @@
 
 ## Usage
 
+Inspired from: https://adamwathan.me/renderless-components-in-vuejs/
+
 ```HTML
 <ajax-handler url="https://api.github.com/orgs/vuejs/repos">
   <template #default="{data}">
