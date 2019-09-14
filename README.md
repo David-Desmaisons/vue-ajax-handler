@@ -1,8 +1,8 @@
 
-# vue-lazy-loading
-[![GitHub open issues](https://img.shields.io/github/issues/David-Desmaisons/vue-lazy-loading.svg?maxAge=2592000)](https://github.com/David-Desmaisons/vue-lazy-loading/issues)
-[![Npm version](https://img.shields.io/npm/David-Desmaisons/vue-lazy-loading.svg?maxAge=2592000)](https://www.npmjs.com/package/vue-lazy-loading)
-[![MIT License](https://img.shields.io/github/license/David-Desmaisons/vue-lazy-loading.svg)](https://github.com/David-Desmaisons/vue-lazy-loading/blob/master/LICENSE)
+# vue-ajax-handler
+[![GitHub open issues](https://img.shields.io/github/issues/David-Desmaisons/vue-ajax-handler.svg)](https://github.com/David-Desmaisons/vue-ajax-handler/issues)
+[![Npm version](https://img.shields.io/npm/David-Desmaisons/vue-ajax-handler.svg)](https://www.npmjs.com/package/vue-ajax-handler)
+[![MIT License](https://img.shields.io/github/license/David-Desmaisons/vue-ajax-handler.svg)](https://github.com/David-Desmaisons/vue-ajax-handler/blob/master/LICENSE)
 
 ## Usage
 ```HTML
