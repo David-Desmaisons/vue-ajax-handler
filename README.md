@@ -6,14 +6,18 @@
 
 ## Usage
 ```HTML
-<VueLazyLoading></VueLazyLoading>
+<ajax-handler url="https://api.github.com/orgs/vuejs/repos">
+  <template #default="{data}">
+    <p>{{data.data[0].name}}</p>
+  </template>
+</ajax-handler>
 ```
 ```javascript
-import { VueLazyLoading } from 'vue-lazy-loading'
+import { ajaxHandler } from 'AjaxHandler'
 
 export default {
   components: {
-    VueLazyLoading
+    ajaxHandler
   }
 }
 ```
@@ -21,7 +25,7 @@ export default {
 
 ## Installation
 ```
-npm install vue-lazy-loading
+npm install vue-ajax-handler
 ```
 
 ## Project setup
