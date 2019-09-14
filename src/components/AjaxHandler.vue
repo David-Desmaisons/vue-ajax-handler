@@ -11,8 +11,9 @@
     </slot>
   </div>
 </template>
-
 <script>
+import { mapToEvents } from "../infra/mapWatcher";
+
 export default {
   name: "ajax-handler",
   inject: ["get"],
@@ -29,6 +30,9 @@ export default {
   }),
   async created() {
     await this.load();
+  },
+  watch: {
+    ...mapToEvents(["loading", "data", "error"])
   },
   methods: {
     async load() {
