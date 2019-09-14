@@ -1,23 +1,13 @@
 <template>
   <div>
-    <slot
-      v-if="loading"
-      name="loading"
-    >
+    <slot v-if="loading" name="loading">
       <div class="loading">Loading ...</div>
     </slot>
-    <slot
-      v-else-if="error"
-      name="error"
-      v-bind="{ error }"
-    >
-      <div class="loading">{{ error }}</div>
+    <slot v-else-if="error" name="error" v-bind="{ error }">
+      <div class="error">{{ error }}</div>
     </slot>
-    <slot
-      v-else
-      v-bind="{ data }"
-    >
-      <pre>{{ JSON.stringify(data, null, 4) }}</pre>
+    <slot v-else v-bind="{ data }">
+      <pre class="data">{{ JSON.stringify(data, null, 4) }}</pre>
     </slot>
   </div>
 </template>
@@ -59,7 +49,7 @@ export default {
 };
 </script>
 <style scoped>
-pre {
+pre.data {
   background: lightgrey;
 }
 </style>
