@@ -22,6 +22,7 @@ describe("AjaxHandler.vue", () => {
 
     it("calls get on created", () => {
       expect(get).toHaveBeenCalledWith(url);
+      expect(get.mock.calls.length).toBe(1);
     });
 
     it("set data to result", () => {
@@ -35,6 +36,16 @@ describe("AjaxHandler.vue", () => {
     it("set error to null", () => {
       expect(wrapper.vm.error).toBe(null);
     });
+
+    describe("when calling load", () => {
+      beforeEach(() => {
+        wrapper.vm.load();
+      });
+
+      it("call get again", () => {
+        expect(get.mock.calls.length).toBe(2);
+      });
+    });
   });
 
   describe("when ajax throw error", () => {
@@ -47,6 +58,7 @@ describe("AjaxHandler.vue", () => {
 
     it("calls get on created", () => {
       expect(get).toHaveBeenCalledWith(url);
+      expect(get.mock.calls.length).toBe(1);
     });
 
     it("set error to the error thrown", () => {
@@ -60,16 +72,27 @@ describe("AjaxHandler.vue", () => {
     it("set data to null", () => {
       expect(wrapper.vm.data).toBe(null);
     });
+
+    describe("when calling load", () => {
+      beforeEach(() => {
+        wrapper.vm.load();
+      });
+
+      it("call get again", () => {
+        expect(get.mock.calls.length).toBe(2);
+      });
+    });
   });
 
   describe("when ajax is not finished", () => {
     beforeEach(() => {
-      get = jest.fn(() => new Promise(function() {}));
+      get = jest.fn(() => new Promise(function () { }));
       wrapper = createWrapper();
     });
 
     it("calls get on created", () => {
       expect(get).toHaveBeenCalledWith(url);
+      expect(get.mock.calls.length).toBe(1);
     });
 
     it("set data to null", () => {
@@ -82,6 +105,16 @@ describe("AjaxHandler.vue", () => {
 
     it("set loading to true", () => {
       expect(wrapper.vm.loading).toBe(true);
+    });
+
+    describe("when calling load", () => {
+      beforeEach(() => {
+        wrapper.vm.load();
+      });
+
+      it("does not call get again", () => {
+        expect(get.mock.calls.length).toBe(1);
+      });
     });
   });
 
