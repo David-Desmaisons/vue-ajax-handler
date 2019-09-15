@@ -14,9 +14,9 @@ Perform an ajax call and delegate the rendering to:
 
 - `loading` slot when loading
 
-- the default slot passing data as parameter in case of success.
+- `default` slot passing data as parameter in case of success.
 
-- `error` slot in case of error passing error as parameter in case of error.
+- `error` slot passing error as parameter in case of error.
 
 This a generic library with no dependency on ajax library, so
 
