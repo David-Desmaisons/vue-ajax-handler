@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ajax-root">
     <slot v-if="loading" name="loading">
       <div class="loading">Loading ...</div>
     </slot>
@@ -53,6 +53,9 @@ export default {
 };
 </script>
 <style scoped>
+div.ajax-root {
+  width: 100%;
+}
 pre.data {
   background: lightgrey;
 }

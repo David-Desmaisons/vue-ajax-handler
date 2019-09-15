@@ -1,6 +1,6 @@
 {
   "name": "vue-ajax-handler",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve ./example/main.js --open",
@@ -11,7 +11,6 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
-    "axios": "^0.19.0",
     "core-js": "^2.6.5",
     "vue": "^2.6.10"
   },
@@ -23,10 +22,11 @@
     "@vue/eslint-config-prettier": "^5.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
     "@vuedoc/md": "^1.5.0",
+    "axios": "^0.19.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^23.6.0",
-    "component-fixture": "^1.0.4",
+    "component-fixture": "^1.0.5",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",
@@ -47,6 +47,6 @@
     "component"
   ],
   "license": "MIT",
-  "main": "dist/vue-lazy-loading.umd.js",
-  "module": "dist/vue-lazy-loading.common.min.js"
+  "main": "dist/vue-ajax-handler.umd.js",
+  "module": "dist/vue-ajax-handler.common.min.js"
 }

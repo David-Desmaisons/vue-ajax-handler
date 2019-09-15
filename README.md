@@ -4,9 +4,17 @@
 [![Npm version](https://img.shields.io/npm/v/vue-ajax-handler.svg)](https://www.npmjs.com/package/vue-ajax-handler)
 [![MIT License](https://img.shields.io/github/license/David-Desmaisons/vue-ajax-handler.svg)](https://github.com/David-Desmaisons/vue-ajax-handler/blob/master/LICENSE)
 
+Ultra minimal generic vue component to deal with ajax loading
+
 ## Usage
 
-Inspired from: https://adamwathan.me/renderless-components-in-vuejs/
+Adapted from: https://adamwathan.me/renderless-components-in-vuejs/
+
+Perform an ajax call and delegate the rendering to the default slots.
+
+Loading and error slot are used to display feedback when loading and in case of ajax error.
+
+The component parent should provide a get function that will be called with the given url.
 
 ```HTML
 <ajax-handler url="https://api.github.com/orgs/vuejs/repos">
@@ -18,10 +26,14 @@ Inspired from: https://adamwathan.me/renderless-components-in-vuejs/
 
 ```javascript
 import { ajaxHandler } from 'AjaxHandler'
+import { get } from "axios";
 
 export default {
   components: {
     ajaxHandler
+  },
+  inject:{
+    get
   }
 }
 ```
