@@ -22,7 +22,7 @@ Perform an ajax call and delegate the rendering to:
 
 This a generic library with no dependency on ajax library, so
 
-  - The component parent should provide a get function that will be called with the given url.
+  - The component parent should provide a get function using the provide API. It could be axios get or fetch, or any ajax library.
 
 ```HTML
 <ajax-handler url="https://api.github.com/orgs/vuejs/repos">
