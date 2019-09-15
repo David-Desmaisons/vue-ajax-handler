@@ -1,13 +1,13 @@
 {
   "name": "vue-ajax-handler",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve ./example/main.js --open",
     "build": "vue-cli-service build --name vue-ajax-handler --entry ./src/index.js --target lib",
     "lint": "vue-cli-service lint",
     "doc:build": "npx vuedoc.md --section API --output ./README.md ./src/components/AjaxHandler.vue",
-    "prepublishOnly": "npm run lint && npm run build && npm run doc:build",
+    "prepublishOnly": "npm run lint && npm run test:unit && npm run build && npm run doc:build",
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {

@@ -10,11 +10,17 @@ Ultra minimal generic vue component to deal with ajax loading
 
 Adapted from: https://adamwathan.me/renderless-components-in-vuejs/
 
-Perform an ajax call and delegate the rendering to the default slots.
+Perform an ajax call and delegate the rendering to:
 
-Loading and error slot are used to display feedback when loading and in case of ajax error.
+- `loading` slot when loading
 
-The component parent should provide a get function that will be called with the given url.
+- the default slot passing data as parameter in case of success.
+
+- `error` slot in case of error passing error as parameter in case of error.
+
+This a generic library with no dependency on ajax library, so
+
+  - The component parent should provide a get function that will be called with the given url.
 
 ```HTML
 <ajax-handler url="https://api.github.com/orgs/vuejs/repos">
@@ -32,7 +38,7 @@ export default {
   components: {
     ajaxHandler
   },
-  inject:{
+  inject: {
     get
   }
 }
@@ -44,33 +50,24 @@ export default {
 
 #### slots 
 
-- `loading` 
+- `loading` slot to render loading feedback 
 
-- `error` 
+- `error` slot to render error feedback 
 
-- `default` 
+- `default` slot to render data when loaded. Receives data as parameter. 
 
 #### props 
 
 - `url` ***String*** (*required*) 
 
-#### data 
-
-- `loading` 
-
-**initial value:** `false` 
-
-- `data` 
-
-**initial value:** `null` 
-
-- `error` 
-
-**initial value:** `null` 
+  The url used to make ajax request. 
 
 #### methods 
 
 - `load()` 
+
+  Perform an ajax call.
+  Automatically called by created hook. 
 
 ## Installation
 
