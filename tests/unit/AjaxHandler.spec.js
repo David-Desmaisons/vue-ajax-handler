@@ -86,7 +86,7 @@ describe("AjaxHandler.vue", () => {
 
   describe("when ajax is not finished", () => {
     beforeEach(() => {
-      get = jest.fn(() => new Promise(function () { }));
+      get = jest.fn(() => new Promise(function() {}));
       wrapper = createWrapper();
     });
 

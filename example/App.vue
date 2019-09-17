@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <component-fixture :defaults="{url: 'https://api.github.com/orgs/vuejs/repos'}">
+    <sandbox :defaults="{url: 'https://api.github.com/orgs/vuejs/repos'}">
 
       <AjaxHandler />
 
@@ -10,12 +10,12 @@
         v-bind="scope"
       />
 
-    </component-fixture>
+    </sandbox>
   </div>
 </template>
 
 <script>
-import { ComponentFixture, Editor } from "component-fixture";
+import { Sandbox } from "component-fixture";
 import "component-fixture/dist/ComponentFixture.css";
 import AjaxHandler from "@/components/AjaxHandler.vue";
 import { get } from "axios";
@@ -27,9 +27,8 @@ export default {
     get
   },
   components: {
-    ComponentFixture,
-    Editor,
-    AjaxHandler
+    AjaxHandler,
+    Sandbox
   }
 };
 </script>
