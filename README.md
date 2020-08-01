@@ -33,7 +33,7 @@ This a generic library with no dependency on ajax library, so
 ```
 
 ```javascript
-import { ajaxHandler } from 'AjaxHandler'
+import { ajaxHandler } from 'vue-ajax-handler'
 import { get } from "axios";
 
 export default {
