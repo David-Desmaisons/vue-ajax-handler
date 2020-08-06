@@ -63,6 +63,13 @@ export default {
 - `url` ***String*** (*required*) 
 
   The url used to make ajax request. 
+  
+#### events 
+- `loading` payload: ***Boolean*** emitted when loading changes. 
+
+- `error` payload: ***Error*** emitted when error changes. 
+
+- `data` payload: ***Object*** emitted when data is loaded, payload: the corresponding data. 
 
 #### methods 
 
